@@ -3,6 +3,81 @@
     <channel>
         <title>KeySearch</title>
         <item>
+            <title>0.1.5</title>
+            <pubDate>Thu, 15 Oct 2026 17:36:49 +0800</pubDate>
+            <sparkle:version>14</sparkle:version>
+            <sparkle:shortVersionString>0.1.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown">## What's new in 0.1.5
+
+**KeySearch says when an update is waiting.** Updates download in the
+background and install when KeySearch quits. Settings → General now says so
+("Version … is downloaded and installs when KeySearch quits.") and offers
+**Install now**, so you do not have to quit to get it.
+
+**KeySearch says when it has been updated.** After an update installs, the
+menu-bar icon shows a dot, and the menu has an "Updated to … — What's New…"
+entry that opens that version's release notes. Settings → General shows the
+version you came from and a **What's new** button. The notice goes away once
+you open the menu or the notes.
+
+This notice starts with 0.1.5. 0.1.4 did not keep a record of which version
+last ran, so the update from 0.1.4 to 0.1.5 itself shows no notice. Later
+updates do.
+
+What has been checked on real apps, and what has not, is recorded in the
+repository's `docs/COMPATIBILITY-MATRIX.md`.
+
+## Install
+
+Download `KeySearch-0.1.5.dmg`, open it, and drag **KeySearch** to
+Applications.
+
+**Drag it there — don't run it from the disk image.** macOS ties every
+permission you grant to the app's *path*. Authorise it while it is still on the
+mounted image and those grants point at a location that stops existing the
+moment you eject, with nothing to connect the two. KeySearch warns you if it
+notices, but moving it first avoids the question.
+
+The first launch is blocked by Gatekeeper — this build is signed, but not with
+an Apple Developer ID, which needs a paid membership. Open **System Settings →
+Privacy &amp; Security**, scroll to *Security*, and click **Open Anyway** next to
+the message about KeySearch. Once only; afterwards it opens normally.
+(macOS 15 removed the old right-click → Open shortcut, so it is not in that
+menu.)
+
+**Your permissions survive updates.** Every release is signed with the same
+certificate, which is what macOS matches when deciding whether an updated app
+is still the app you authorised.
+
+## Permissions
+
+KeySearch asks for nothing at launch. Each mode requests only what it uses:
+
+| Mode | Needs |
+| --- | --- |
+| Find Text | Accessibility or Screen Recording (either one is enough) |
+| Click Labels, Scroll | Accessibility + Input Monitoring |
+| Grid Pointer, Free Pointer | Input Monitoring |
+
+Clicking and scrolling anywhere additionally needs event posting. Settings →
+Permissions lists all four and says which modes each one unlocks.
+
+Requires macOS 14 or newer.
+
+## Verify the download
+
+```
+shasum -a 256 -c KeySearch-0.1.5.dmg.sha256
+```
+
+KeySearch has no network connection for app functionality, telemetry or crash
+reporting. Sparkle only checks the signed update feed when update checks are
+enabled, and verifies the package before installation.
+</description>
+            <enclosure url="https://github.com/Snowyyyyyy1/KeySearchApp-releases/releases/download/v0.1.5/KeySearch-0.1.5.dmg" length="5166242" type="application/octet-stream" sparkle:edSignature="X3uDw1cpRIYP8N5Vg+8GRbIINCpONEiqPG4lp/lBsELDHHPApfoC0ub848YR1u0EZswhi+w+My9/IKPctBPxAw==" />
+        </item>
+        <item>
             <title>0.1.4</title>
             <pubDate>Thu, 15 Oct 2026 10:25:57 +0800</pubDate>
             <sparkle:version>13</sparkle:version>
