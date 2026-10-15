@@ -3,6 +3,107 @@
     <channel>
         <title>KeySearch</title>
         <item>
+            <title>0.1.4</title>
+            <pubDate>Thu, 15 Oct 2026 10:25:57 +0800</pubDate>
+            <sparkle:version>13</sparkle:version>
+            <sparkle:shortVersionString>0.1.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown">## What's new in 0.1.4
+
+**Scroll mode opens straight away in long lists.** It used to read every row
+of a list before showing anything. A Finder list view took up to almost a
+second, and Notes took more than its time limit, so one of its scroll areas
+was missing. Both now open in well under a tenth of a second, with every
+scroll area found.
+
+**Starting a mode from the menu works while Settings is open.** Find Text
+started from the menu bar with the Settings window open was often dropped
+without a sign. It now opens over the app you were using.
+
+**Grid Pointer stays readable as the cells shrink.** Once a cell gets too
+small for its keys, the nine keys move to a keypad beside the selection, and
+the selection border no longer fills the smallest cells. ⌘R and ⌘C now reach
+the app instead of picking a cell, and G or ⌘R starts over from the whole
+screen.
+
+**Click Labels opens faster in Chrome.** Every Chrome activation used to
+wait about a second and a half before any label appeared. Labels on Chrome's
+new-tab page now show in under half a second.
+
+**Buttons inside rows and cards get their own label.** A button in a table
+row or cell, or a small button on a larger one (such as "More actions" on
+Chrome's profile cards), used to be hidden behind the bigger element's label,
+so it could not be reached. Both now get a label.
+
+**Smaller fixes.**
+
+- Find Text highlights the right characters after emoji such as flags.
+  Matches used to land one character to the left.
+- A long pause no longer turns into a huge jump when you scroll by holding a
+  key.
+- Typing goes back to your app when a display change closes Find Text.
+- The next-match key in Settings takes the new key you type, and refuses a
+  space.
+- Turning on screen text warms text recognition up at once. The first search
+  after that is no longer slow.
+- A Login Item you remove in System Settings stays removed. Settings no longer
+  adds it back.
+- Buttons that do nothing right now, such as "Check now" in a build with
+  updates off, look disabled.
+
+What has been checked on real apps, and what has not, is recorded in the
+repository's `docs/COMPATIBILITY-MATRIX.md`.
+
+## Install
+
+Download `KeySearch-0.1.4.dmg`, open it, and drag **KeySearch** to
+Applications.
+
+**Drag it there — don't run it from the disk image.** macOS ties every
+permission you grant to the app's *path*. Authorise it while it is still on the
+mounted image and those grants point at a location that stops existing the
+moment you eject, with nothing to connect the two. KeySearch warns you if it
+notices, but moving it first avoids the question.
+
+The first launch is blocked by Gatekeeper — this build is signed, but not with
+an Apple Developer ID, which needs a paid membership. Open **System Settings →
+Privacy &amp; Security**, scroll to *Security*, and click **Open Anyway** next to
+the message about KeySearch. Once only; afterwards it opens normally.
+(macOS 15 removed the old right-click → Open shortcut, so it is not in that
+menu.)
+
+**Your permissions survive updates.** Every release is signed with the same
+certificate, which is what macOS matches when deciding whether an updated app
+is still the app you authorised.
+
+## Permissions
+
+KeySearch asks for nothing at launch. Each mode requests only what it uses:
+
+| Mode | Needs |
+| --- | --- |
+| Find Text | Accessibility or Screen Recording (either one is enough) |
+| Click Labels, Scroll | Accessibility + Input Monitoring |
+| Grid Pointer, Free Pointer | Input Monitoring |
+
+Clicking and scrolling anywhere additionally needs event posting. Settings →
+Permissions lists all four and says which modes each one unlocks.
+
+Requires macOS 14 or newer.
+
+## Verify the download
+
+```
+shasum -a 256 -c KeySearch-0.1.4.dmg.sha256
+```
+
+KeySearch has no network connection for app functionality, telemetry or crash
+reporting. Sparkle only checks the signed update feed when update checks are
+enabled, and verifies the package before installation.
+</description>
+            <enclosure url="https://github.com/Snowyyyyyy1/KeySearchApp-releases/releases/download/v0.1.4/KeySearch-0.1.4.dmg" length="5149647" type="application/octet-stream" sparkle:edSignature="qlvyB/F7vOO1RF2zGt/9aN8zGGeOM1aeE5ufm7Cc/CNZXG9cSiYaeSIqtYygCV02ZjEKIYDK5YnWp/9Q5LIwDg==" />
+        </item>
+        <item>
             <title>0.1.3</title>
             <pubDate>Mon, 12 Oct 2026 21:25:35 +0800</pubDate>
             <sparkle:version>12</sparkle:version>
