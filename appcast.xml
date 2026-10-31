@@ -3,6 +3,92 @@
     <channel>
         <title>KeySearch</title>
         <item>
+            <title>0.1.8</title>
+            <pubDate>Sat, 31 Oct 2026 19:56:25 +0800</pubDate>
+            <sparkle:version>17</sparkle:version>
+            <sparkle:shortVersionString>0.1.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown">## What's new in 0.1.8
+
+**No more Secure Input alert while you type a password.** With a mode started
+by a single modifier key, a shortcut such as ⌘V typed into a password field,
+the lock screen, an authorization dialog or Parallels Desktop could count as
+that modifier tapped on its own, because macOS hides every other key while
+Secure Input is on. Each one brought up the "Secure input is active" alert.
+Modifier keys now do nothing while Secure Input is on. A mode you are holding
+up with one still ends when you let go.
+
+**Modes open on the display you are working on.** Grid Pointer and Free
+Pointer open on the display that holds the front window of the app you are
+using, not the one the pointer happens to be on. Free Pointer first moves a
+pointer left on another display to the middle of that window. Legends, notices
+and the practice strip follow.
+
+**Clearer overlays.** Click Labels puts a wide row's label over the start of
+the row instead of over its name. Find Text frames the selected match strongly
+and the others with one faint line, and the compact card's status is no longer
+cut short. Scroll's legend sits at the top under the menu bar, like every
+other mode's.
+
+**Status menu and Settings.** The running mode has a check mark, a mode's
+modifier key is shown under its name (macOS 14.4 and later), and the
+permissions row hides once everything is granted. In Settings, mode cards list
+modifier keys under the shortcut, and a mode's page puts how it starts on the
+left and its settings, then its keys, on the right.
+
+What has been checked on real apps, and what has not, is recorded in the
+repository's `docs/COMPATIBILITY-MATRIX.md`.
+
+## Install
+
+Download `KeySearch-0.1.8.dmg`, open it, and drag **KeySearch** to
+Applications.
+
+**Drag it there — don't run it from the disk image.** macOS ties every
+permission you grant to the app's *path*. Authorise it while it is still on the
+mounted image and those grants point at a location that stops existing the
+moment you eject, with nothing to connect the two. KeySearch warns you if it
+notices, but moving it first avoids the question.
+
+The first launch is blocked by Gatekeeper — this build is signed, but not with
+an Apple Developer ID, which needs a paid membership. Open **System Settings →
+Privacy &amp; Security**, scroll to *Security*, and click **Open Anyway** next to
+the message about KeySearch. Once only; afterwards it opens normally.
+(macOS 15 removed the old right-click → Open shortcut, so it is not in that
+menu.)
+
+**Your permissions survive updates.** Every release is signed with the same
+certificate, which is what macOS matches when deciding whether an updated app
+is still the app you authorised.
+
+## Permissions
+
+KeySearch asks for nothing at launch. Each mode requests only what it uses:
+
+| Mode | Needs |
+| --- | --- |
+| Find Text | Accessibility or Screen Recording (either one is enough) |
+| Click Labels, Scroll | Accessibility + Input Monitoring |
+| Grid Pointer, Free Pointer | Input Monitoring |
+
+Clicking and scrolling anywhere additionally needs event posting. Settings →
+Permissions lists all four and says which modes each one unlocks.
+
+Requires macOS 14 or newer.
+
+## Verify the download
+
+```
+shasum -a 256 -c KeySearch-0.1.8.dmg.sha256
+```
+
+KeySearch has no network connection for app functionality, telemetry or crash
+reporting. Sparkle only checks the signed update feed when update checks are
+enabled, and verifies the package before installation.
+</description>
+            <enclosure url="https://github.com/Snowyyyyyy1/KeySearchApp-releases/releases/download/v0.1.8/KeySearch-0.1.8.dmg" length="6306526" type="application/octet-stream" sparkle:edSignature="s6R9gr/xUGBZYr7z6lR4Tquw+lqQErFoGGBfIRpbdl2Cc7WmS8IT2LWyvOnfN5Y2xLiX1nL5sWW6aneu0WdMDw==" />
+        </item>
+        <item>
             <title>0.1.7</title>
             <pubDate>Tue, 27 Oct 2026 14:39:24 +0800</pubDate>
             <sparkle:version>16</sparkle:version>
